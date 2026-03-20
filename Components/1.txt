@@ -1,0 +1,3 @@
+I’m looking at this shadcn/ui documentation: https://magicui.design/docs/components/number-ticker.
+
+Help me understand how to use it. Be ready to explain concepts, give examples, or help debug based on it.

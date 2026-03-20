@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Guide Is Ready | IAMNURSE</title>
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            font-size: 17px; line-height: 1.65;
+            color: #1a2332; background: #f8fafb; overflow-x: hidden;
+            min-height: 100vh; display: flex; flex-direction: column;
+        }
+        :root {
+            --teal: #43797d; --teal-dark: #2d5a5e; --teal-light: #e8f4f5;
+            --cyan: #60f7fa; --dark: #1a2332; --white: #ffffff;
+            --off-white: #f8fafb; --gray-400: #8a9a9b; --gray-600: #5a6b6c;
+            --radius: 20px;
+        }
+        img { max-width: 100%; display: block; }
+        a { color: inherit; text-decoration: none; }
+
+        /* NAV */
+        nav {
+            background: var(--dark); padding: 20px 32px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        nav img { height: 36px; filter: brightness(0) invert(1); }
+
+        /* MAIN */
+        main {
+            flex: 1; display: flex; align-items: center; justify-content: center;
+            padding: 80px 24px;
+        }
+        .card {
+            background: var(--white); border-radius: var(--radius);
+            box-shadow: 0 24px 80px rgba(67,121,125,0.12);
+            max-width: 640px; width: 100%; overflow: hidden;
+        }
+        .card__top {
+            background: var(--teal); padding: 56px 48px 48px; text-align: center; position: relative;
+        }
+        .card__top::after {
+            content: '';
+            position: absolute; bottom: -1px; left: 0; right: 0;
+            height: 40px;
+            background: var(--white);
+            clip-path: ellipse(55% 100% at 50% 100%);
+        }
+        .check-circle {
+            width: 80px; height: 80px; border-radius: 50%;
+            background: rgba(255,255,255,0.15); border: 3px solid rgba(255,255,255,0.4);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 24px;
+        }
+        .check-circle svg { width: 40px; height: 40px; }
+        .card__top h1 {
+            font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 6vw, 64px);
+            color: var(--white); line-height: 0.95; letter-spacing: 0.01em; text-transform: uppercase;
+        }
+        .card__top h1 span { color: var(--cyan); }
+        .card__top p {
+            color: rgba(255,255,255,0.8); font-size: 16px;
+            margin-top: 16px; line-height: 1.6; max-width: 420px; margin-left: auto; margin-right: auto;
+        }
+        .card__body { padding: 48px; text-align: center; }
+        .what-next {
+            background: var(--off-white); border-radius: 16px;
+            padding: 32px; margin-bottom: 32px; text-align: left;
+        }
+        .what-next h3 {
+            font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em;
+            color: var(--teal); font-weight: 700; margin-bottom: 20px;
+        }
+        .step {
+            display: flex; gap: 16px; align-items: flex-start; margin-bottom: 20px;
+        }
+        .step:last-child { margin-bottom: 0; }
+        .step__num {
+            width: 36px; height: 36px; min-width: 36px; border-radius: 10px;
+            background: var(--teal-light); color: var(--teal);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 900; font-size: 14px;
+        }
+        .step__text h4 { font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+        .step__text p { font-size: 14px; color: var(--gray-600); margin: 0; }
+
+        /* DOWNLOAD BUTTON */
+        .btn-download {
+            display: flex; align-items: center; justify-content: center; gap: 12px;
+            width: 100%; padding: 20px 32px; background: var(--teal); color: var(--white);
+            border-radius: 60px; font-size: 15px; font-weight: 800;
+            text-transform: uppercase; letter-spacing: 0.08em;
+            transition: background 0.2s, transform 0.2s;
+            margin-bottom: 16px; border: none; cursor: pointer; font-family: inherit;
+        }
+        .btn-download:hover { background: var(--teal-dark); transform: translateY(-2px); }
+        .btn-download svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+        .fine-print {
+            font-size: 13px; color: var(--gray-400); margin-bottom: 32px; line-height: 1.5;
+        }
+        .divider { border: none; border-top: 1px solid #eef2f2; margin: 0 0 32px; }
+
+        .social-row {
+            display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+        }
+        .social-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 24px; border-radius: 60px; border: 2px solid #dde5e5;
+            font-size: 13px; font-weight: 700; transition: border-color 0.2s, color 0.2s;
+            color: var(--dark);
+        }
+        .social-btn:hover { border-color: var(--teal); color: var(--teal); }
+        .social-btn svg { width: 16px; height: 16px; }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark); padding: 32px; text-align: center;
+            font-size: 13px; color: rgba(255,255,255,0.4);
+        }
+        footer a { color: rgba(255,255,255,0.6); }
+        footer a:hover { color: var(--cyan); }
+
+        @media (max-width: 600px) {
+            .card__top { padding: 40px 28px 40px; }
+            .card__body { padding: 32px 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <img src="https://cdn.prod.website-files.com/67c0ca361b44fd783e89fbb8/67c0cb31303d312489ee7da5_IAMNURSE%20CLEAR.png" alt="IAMNURSE">
+</nav>
+
+<main>
+    <div class="card">
+        <div class="card__top">
+            <div class="check-circle">
+                <svg fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path d="M5 13l4 4L19 7"/>
+                </svg>
+            </div>
+            <h1>You're all<br>set, <span>let's go</span></h1>
+            <p>Your free guide from Nurse Charles is ready. Check your inbox — it's on its way. You can also download it directly below.</p>
+        </div>
+
+        <div class="card__body">
+            <div class="what-next">
+                <h3>What happens next</h3>
+                <div class="step">
+                    <div class="step__num">1</div>
+                    <div class="step__text">
+                        <h4>Check your inbox</h4>
+                        <p>The guide is being sent to your email right now. Check your spam folder if you don't see it within 2 minutes.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step__num">2</div>
+                    <div class="step__text">
+                        <h4>Read Chapter 8 first</h4>
+                        <p>The 8-step quit plan. If you're ready to stop, this is where to start.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step__num">3</div>
+                    <div class="step__text">
+                        <h4>Share it with someone who needs it</h4>
+                        <p>Send this page to a parent, a teen, or anyone you think could use this information.</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="er-nurses-guide-to-quitting-vaping.html" class="btn-download" target="_blank">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M12 16l-4-4h3V4h2v8h3l-4 4zm-6 2h12v2H6v-2z"/>
+                </svg>
+                Download the Guide Now
+            </a>
+            <p class="fine-print">Free · No login required · PDF opens in browser</p>
+
+            <hr class="divider">
+
+            <p style="font-size: 15px; font-weight: 700; margin-bottom: 16px;">Follow Nurse Charles for more ER truths</p>
+            <div class="social-row">
+                <a class="social-btn" href="https://www.tiktok.com/@1nursecharles" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.28 6.28 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.83a8.18 8.18 0 0 0 4.78 1.52V6.9a4.85 4.85 0 0 1-1.01-.21z"/></svg>
+                    TikTok — 100K+
+                </a>
+                <a class="social-btn" href="https://iamnurse.org" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 1 0 20M2 12h20"/></svg>
+                    iamnurse.org
+                </a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 IAMNURSE LLC · <a href="mailto:hello@iamnurse.org">hello@iamnurse.org</a> · Atlanta, GA</p>
+    <p style="margin-top: 8px;">This guide is for educational purposes only. If you or someone you know is in crisis, call <strong style="color: rgba(255,255,255,0.7)">911</strong> immediately.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The ER Nurse's Guide to Quitting Vaping | IAMNURSE</title>
+    <meta name="description" content="Free guide from Nurse Charles — 37 years of emergency medicine packed into one life-saving resource. Real ER cases. Real science. A real plan to quit.">
+    <meta property="og:title" content="The ER Nurse's Guide to Quitting Vaping | IAMNURSE">
+    <meta property="og:description" content="Free guide from an ER nurse with 37 years of experience. Real cases. Real science. Real plan to quit.">
+    <meta property="og:image" content="https://nursecharlesmedia.com/images/stop-vaping-preview.jpg">
+    <meta name="twitter:image" content="https://nursecharlesmedia.com/images/stop-vaping-preview.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        /* ========== RESET ========== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            font-size: 17px;
+            line-height: 1.65;
+            color: #1a2332;
+            background: #f8fafb;
+            overflow-x: hidden;
+        }
+        img { max-width: 100%; display: block; }
+        a { color: inherit; text-decoration: none; }
+        button { font-family: inherit; cursor: pointer; }
+
+        /* ========== TOKENS ========== */
+        :root {
+            --teal: #43797d;
+            --teal-dark: #2d5a5e;
+            --teal-light: #e8f4f5;
+            --cyan: #60f7fa;
+            --cyan-glow: rgba(96,247,250,0.12);
+            --dark: #1a2332;
+            --dark-card: #1e2b3d;
+            --white: #ffffff;
+            --off-white: #f8fafb;
+            --cream: #f0f5f5;
+            --gray-100: #f1f5f5;
+            --gray-200: #dde5e5;
+            --gray-400: #8a9a9b;
+            --gray-600: #5a6b6c;
+            --danger: #DC2626;
+            --danger-bg: #fef2f2;
+            --radius: 20px;
+            --radius-sm: 14px;
+        }
+
+        /* ========== DISPLAY TYPE (Quoti style) ========== */
+        .display {
+            font-family: 'Bebas Neue', 'Inter', sans-serif;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.01em;
+            line-height: 0.92;
+        }
+        .display--hero { font-size: clamp(60px, 10vw, 140px); }
+        .display--section { font-size: clamp(48px, 7vw, 100px); }
+        .display--mid { font-size: clamp(36px, 5vw, 72px); }
+
+        /* ========== CONTAINERS ========== */
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+        .container--narrow { max-width: 860px; }
+        .section-spacer { padding: 120px 0; }
+        .section-spacer--sm { padding: 80px 0; }
+
+        /* ========== TORN PAPER TEXTURE (Quoti style) ========== */
+        .paper-tear {
+            position: relative; width: 100%; height: 60px; overflow: hidden;
+        }
+        .paper-tear--top { margin-bottom: -2px; }
+        .paper-tear--bottom { margin-top: -2px; }
+        .paper-tear svg { width: 100%; height: 100%; display: block; }
+
+        /* ========== BUTTONS (Quoti hover style) ========== */
+        .btn-wrap {
+            position: relative; display: inline-flex; overflow: hidden;
+            border-radius: 60px; cursor: pointer;
+        }
+        .btn-wrap a, .btn-wrap button {
+            position: relative; z-index: 2;
+            padding: 18px 40px; border: none; border-radius: 60px;
+            font-size: 14px; font-weight: 800; text-transform: uppercase;
+            letter-spacing: 0.08em; transition: transform 0.35s cubic-bezier(0.22,1,0.36,1);
+            display: flex; align-items: center; gap: 8px;
+        }
+        .btn--teal a, .btn--teal button { background: var(--teal); color: var(--white); }
+        .btn--cyan a, .btn--cyan button { background: var(--cyan); color: var(--dark); }
+        .btn--dark a, .btn--dark button { background: var(--dark); color: var(--white); }
+        .btn--outline a, .btn--outline button { background: transparent; color: var(--teal); border: 2px solid var(--gray-200); }
+        .btn-hover {
+            position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em;
+            border-radius: 60px; transform: translateY(100%);
+            transition: transform 0.35s cubic-bezier(0.22,1,0.36,1);
+        }
+        .btn--teal .btn-hover { background: var(--teal-dark); color: var(--white); }
+        .btn--cyan .btn-hover { background: #4dd9dc; color: var(--dark); }
+        .btn--dark .btn-hover { background: var(--teal); color: var(--white); }
+        .btn-wrap:hover a, .btn-wrap:hover button { transform: translateY(-100%); }
+        .btn-wrap:hover .btn-hover { transform: translateY(0); }
+
+        /* ========== PILL BADGE ========== */
+        .pill {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 6px 18px; border-radius: 60px; font-size: 12px; font-weight: 700;
+            letter-spacing: 0.08em; text-transform: uppercase;
+        }
+        .pill--danger { background: var(--danger-bg); color: var(--danger); }
+        .pill--teal { background: var(--teal-light); color: var(--teal); }
+
+        /* ========== GHL FORM EMBED ========== */
+        .ghl-form-wrap {
+            border-radius: var(--radius); overflow: hidden;
+            border: 2px solid var(--gray-200); background: var(--white);
+            max-width: 480px;
+        }
+        .ghl-form-wrap iframe { display: block; width: 100%; border: none; }
+        .ghl-form-wrap form {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            padding: 32px;
+        }
+        .ghl-form-wrap label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        .ghl-form-wrap input {
+            padding: 14px 16px;
+            border-radius: 14px;
+            border: 1px solid var(--gray-200);
+            font-size: 15px;
+            font-family: inherit;
+        }
+        .ghl-form-wrap button {
+            border: none;
+            border-radius: 60px;
+            padding: 16px 20px;
+            background: var(--teal);
+            color: var(--white);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .ghl-form-wrap button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        .ghl-form-wrap button:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(67,121,125,0.3);
+        }
+        .form-status {
+            font-size: 14px;
+            min-height: 20px;
+            color: var(--dark);
+        }
+        .form-status.success {
+            color: var(--teal);
+        }
+        .form-status.error {
+            color: var(--danger);
+        }
+
+        /* ========== REVEAL ANIMATION ========== */
+        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.15s; }
+        .reveal-delay-2 { transition-delay: 0.3s; }
+        .reveal-delay-3 { transition-delay: 0.45s; }
+
+        /* ================================================
+           SECTION 1 — HERO
+           ================================================ */
+        .hero {
+            position: relative; min-height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; background: var(--off-white); overflow: hidden;
+            padding: 140px 0 80px;
+        }
+        .hero__bg {
+            position: absolute; inset: 0;
+            background: url('https://cdn.prod.website-files.com/67c0ca361b44fd783e89fbb8/67c0e9131a5ef3e3d075d698_EN%20HANDS%20HEADER%20%2814%29-poster-00001.jpg') center/cover no-repeat;
+            opacity: 0.06;
+        }
+        .hero__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; position: relative; z-index: 2; }
+        .hero__eyebrow { margin-bottom: 24px; }
+        .hero h1 { color: var(--dark); margin-bottom: 24px; }
+        .hero h1 span { color: var(--teal); }
+        .hero__sub {
+            font-size: 18px; line-height: 1.6; color: var(--gray-600); max-width: 520px; margin-bottom: 36px;
+        }
+        .hero__image {
+            position: relative; border-radius: var(--radius); overflow: hidden;
+            box-shadow: 0 24px 80px rgba(67,121,125,0.18);
+        }
+        .hero__image img { width: 100%; height: 100%; object-fit: cover; }
+        .hero__cert {
+            position: absolute; bottom: -12px; right: -12px; width: 110px; height: 110px;
+            border-radius: 50%; overflow: hidden; border: 4px solid var(--off-white);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        .hero__cert img { width: 100%; height: 100%; object-fit: cover; }
+        .hero__form-wrap {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 24px 80px rgba(67,121,125,0.18);
+            background: #fff;
+        }
+        .hero__trust {
+            display: flex; gap: 32px; margin-top: 48px; flex-wrap: wrap;
+        }
+        .trust-item { text-align: left; }
+        .trust-item__num {
+            font-family: 'Bebas Neue', sans-serif; font-size: 36px; color: var(--teal); line-height: 1;
+        }
+        .trust-item__label { font-size: 12px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+        @media (max-width: 1024px) {
+            .hero__image {
+                order: 2;
+            }
+            .hero__cta-card {
+                padding: 24px;
+            }
+        }
+
+        /* ================================================
+           SECTION 2 — THE PROBLEM (teal bg, paper tears)
+           ================================================ */
+        .problem { background: var(--teal); color: var(--white); position: relative; }
+        .problem__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 56px; }
+        .stat-card {
+            background: rgba(255,255,255,0.08); border-radius: var(--radius-sm); padding: 36px 24px;
+            text-align: center; border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(4px);
+        }
+        .stat-card__num {
+            font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 4vw, 56px);
+            color: var(--cyan); line-height: 1; margin-bottom: 8px;
+        }
+        .stat-card__label { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.4; }
+        .quote-block {
+            position: relative; padding: 32px 0 32px 32px;
+            border-left: 4px solid var(--cyan); max-width: 720px; margin: 0 auto;
+        }
+        .quote-block p { font-size: 21px; font-style: italic; line-height: 1.55; color: rgba(255,255,255,0.92); margin-bottom: 12px; }
+        .quote-block cite { font-size: 14px; color: var(--cyan); font-style: normal; font-weight: 600; }
+
+        /* ================================================
+           SECTION 3 — DISPLAY HEADING (Quoti big text)
+           ================================================ */
+        .big-text {
+            background: var(--off-white); text-align: center;
+        }
+        .big-text p {
+            font-size: 18px; color: var(--gray-600); max-width: 600px; margin: 24px auto 36px; line-height: 1.6;
+        }
+
+        /* ================================================
+           SECTION 4 — WHAT'S INSIDE (chapters)
+           ================================================ */
+        .chapters { background: var(--white); }
+        .chapters__grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 16px; margin-bottom: 48px;
+        }
+        .ch-card {
+            display: flex; gap: 16px; align-items: flex-start;
+            padding: 24px; border-radius: var(--radius-sm); border: 2px solid var(--gray-100);
+            transition: all 0.3s ease; background: var(--white);
+        }
+        .ch-card:hover { border-color: var(--teal); transform: translateY(-3px); box-shadow: 0 8px 32px rgba(67,121,125,0.1); }
+        .ch-num {
+            width: 44px; height: 44px; min-width: 44px; border-radius: 12px;
+            background: var(--teal-light); color: var(--teal);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 900; font-size: 16px;
+        }
+        .ch-card h4 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+        .ch-card p { font-size: 14px; color: var(--gray-600); margin: 0; line-height: 1.5; }
+
+        /* ================================================
+           SECTION 5 — ABOUT (two-column with images)
+           ================================================ */
+        .about { background: var(--cream); }
+        .about__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .about__images { position: relative; }
+        .about__img-main {
+            border-radius: var(--radius); overflow: hidden;
+            box-shadow: 0 16px 64px rgba(0,0,0,0.1);
+        }
+        .about__img-main img { width: 100%; object-fit: cover; }
+        .about__img-cert {
+            position: absolute; bottom: -20px; right: -20px; width: 120px; height: 120px;
+            border-radius: 50%; overflow: hidden; border: 5px solid var(--cream);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        .about__img-cert img { width: 100%; height: 100%; object-fit: cover; }
+        .about__img-logo {
+            position: absolute; top: -20px; left: -20px; width: 80px; height: 80px;
+            border-radius: 16px; overflow: hidden; background: var(--dark); padding: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15); display: flex; align-items: center;
+        }
+        .about__img-logo img { width: 100%; filter: brightness(0) invert(1); }
+        .cred-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+        .cred {
+            padding: 8px 18px; background: var(--teal-light); border-radius: 60px;
+            font-size: 12px; font-weight: 700; color: var(--teal); text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        /* ================================================
+           SECTION 6 — ER STORIES (horizontal scroll, Quoti style cards)
+           ================================================ */
+        .stories { background: var(--dark); color: var(--white); position: relative; }
+        .stories__scroll {
+            display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory;
+            padding: 8px 0 32px; -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin; scrollbar-color: var(--teal) transparent;
+        }
+        .stories__scroll::-webkit-scrollbar { height: 4px; }
+        .stories__scroll::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 2px; }
+        .story-card {
+            min-width: 340px; max-width: 380px; scroll-snap-align: start; flex-shrink: 0;
+            background: var(--dark-card); border-radius: var(--radius-sm); padding: 36px;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: transform 0.3s;
+        }
+        .story-card:hover { transform: translateY(-4px); }
+        .story-card__age {
+            font-family: 'Bebas Neue', sans-serif; font-size: 64px; color: var(--cyan);
+            line-height: 1; margin-bottom: 0;
+        }
+        .story-card__label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-400); margin-bottom: 16px; }
+        .story-card h4 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+        .story-card p { font-size: 15px; color: rgba(255,255,255,0.65); line-height: 1.55; margin: 0; }
+        .tag {
+            display: inline-block; margin-top: 16px; padding: 5px 14px; border-radius: 60px;
+            font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+        }
+        .tag--fatal { background: rgba(220,38,38,0.12); color: #f87171; }
+        .tag--critical { background: rgba(251,191,36,0.12); color: #fbbf24; }
+        .tag--psychosis { background: rgba(167,139,250,0.12); color: #a78bfa; }
+
+        /* ================================================
+           SECTION 7 — FAQ (Quoti dropdown style)
+           ================================================ */
+        .faq { background: var(--white); }
+        .faq__grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: start; }
+        .faq__cta {
+            position: sticky; top: 120px;
+            border-radius: var(--radius); overflow: hidden;
+            background: var(--teal-light);
+        }
+        .faq__cta-img { width: 100%; aspect-ratio: 4/3; overflow: hidden; }
+        .faq__cta-img img { width: 100%; height: 100%; object-fit: cover; }
+        .faq__cta-body { padding: 32px; }
+        .faq__cta-body p { font-size: 15px; color: var(--gray-600); margin-bottom: 20px; line-height: 1.6; }
+        .faq__list { }
+        .faq-item { border-bottom: 1px solid var(--gray-200); }
+        .faq-item summary {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 24px 0; cursor: pointer; font-size: 16px; font-weight: 700;
+            list-style: none; transition: color 0.2s;
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after {
+            content: ''; width: 28px; height: 28px; min-width: 28px;
+            background: var(--teal-light); border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' viewBox='0 0 24 24' stroke='%2343797d' stroke-width='2.5'%3E%3Cpath d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: center;
+            transition: transform 0.3s;
+        }
+        .faq-item[open] summary::after { transform: rotate(180deg); }
+        .faq-item summary:hover { color: var(--teal); }
+        .faq-answer { padding: 0 0 24px; font-size: 15px; color: var(--gray-600); line-height: 1.65; max-width: 640px; }
+
+        /* ================================================
+           SECTION 8 — FINAL CTA (Quoti paper-tear CTA)
+           ================================================ */
+        .final-cta {
+            background: var(--teal); color: var(--white); text-align: center;
+            position: relative;
+        }
+        .final-cta h2 { color: var(--white); }
+        .final-cta p { color: rgba(255,255,255,0.8); max-width: 600px; margin: 16px auto 36px; font-size: 18px; line-height: 1.6; }
+        .final-cta .email-row { justify-content: center; }
+        .final-cta .fine-print { margin-top: 16px; font-size: 13px; color: rgba(255,255,255,0.5); }
+
+        /* ================================================
+           FOOTER
+           ================================================ */
+        .footer { background: var(--dark); color: rgba(255,255,255,0.5); padding: 80px 0 40px; font-size: 14px; }
+        .footer__grid {
+            display: grid; grid-template-columns: 1.5fr repeat(3, 1fr); gap: 48px; margin-bottom: 48px;
+        }
+        .footer__brand { max-width: 320px; }
+        .footer__logo { width: 120px; margin-bottom: 16px; filter: brightness(0) invert(1); }
+        .footer__col h4 {
+            color: var(--white); font-size: 12px; text-transform: uppercase;
+            letter-spacing: 0.1em; margin-bottom: 16px; font-weight: 700;
+        }
+        .footer__col a { display: block; margin-bottom: 10px; transition: color 0.2s; }
+        .footer__col a:hover { color: var(--cyan); }
+        .footer__bottom {
+            border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px;
+            display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px;
+        }
+        .footer__disclaimer { font-size: 12px; color: rgba(255,255,255,0.3); line-height: 1.6; max-width: 700px; margin-top: 16px; }
+        .footer__big-logo {
+            font-family: 'Bebas Neue', sans-serif; font-size: clamp(80px, 12vw, 200px);
+            color: rgba(255,255,255,0.04); text-align: center; line-height: 1;
+            margin-top: 40px; text-transform: uppercase; letter-spacing: 0.02em;
+        }
+
+        /* ========== PAPER TEAR SVG ========== */
+        .tear { display: block; width: 100%; line-height: 0; }
+        .tear--teal-to-white svg { fill: var(--off-white); }
+        .tear--white-to-teal svg { fill: var(--teal); }
+        .tear--white-to-dark svg { fill: var(--dark); }
+        .tear--dark-to-white svg { fill: var(--white); }
+        .tear--cream-to-dark svg { fill: var(--dark); }
+        .tear--dark-to-teal svg { fill: var(--teal); }
+        .tear--teal-to-cream svg { fill: var(--cream); }
+        .tear--white-to-cream svg { fill: var(--cream); }
+        .tear--cream-to-white svg { fill: var(--white); }
+        .tear--teal-to-dark svg { fill: var(--dark); }
+        .tear--dark-to-off svg { fill: var(--off-white); }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 992px) {
+            .hero__grid { grid-template-columns: 1fr; gap: 48px; }
+            .hero__image { max-width: 480px; }
+            .hero__form-wrap { max-width: 480px; }
+            .about__grid { grid-template-columns: 1fr; gap: 48px; }
+            .about__images { max-width: 480px; }
+            .faq__grid { grid-template-columns: 1fr; }
+            .faq__cta { position: static; }
+            .footer__grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .section-spacer { padding: 80px 0; }
+            .section-spacer--sm { padding: 56px 0; }
+            .problem__grid { grid-template-columns: 1fr 1fr; }
+            .hero { padding: 120px 0 60px; }
+            .hero__trust { gap: 24px; }
+            .email-row { flex-direction: column; }
+            .email-row input[type="email"] { min-width: unset; }
+            .story-card { min-width: 290px; }
+            .footer__grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 480px) {
+            .problem__grid { grid-template-columns: 1fr; }
+            .chapters__grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <div class="hero__bg"></div>
+    <div class="container">
+        <div class="hero__grid">
+            <div>
+                <div class="hero__eyebrow">
+                    <span class="pill pill--danger">
+                        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 9v4m0 4h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                        Free Guide — Download Now
+                    </span>
+                </div>
+                <h1 class="display display--hero">
+                    Stop the<br>vaping <span>crisis</span>
+                </h1>
+                <p class="hero__sub">A free, comprehensive guide from an ER nurse with 37 years of emergency medicine. Real cases. Real science. A real plan to quit.</p>
+                <div class="btn-wrap btn--teal">
+                    <a href="/er-nurses-guide-to-quitting-vaping.html">Get the Free Guide — It's Free</a>
+                    <div class="btn-hover">Get the Free Guide — It's Free</div>
+                </div>
+                <div class="hero__trust">
+                    <div class="trust-item">
+                        <div class="trust-item__num">100K+</div>
+                        <div class="trust-item__label">TikTok Followers</div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-item__num">37 Yrs</div>
+                        <div class="trust-item__label">Emergency Medicine</div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-item__num">6.9M</div>
+                        <div class="trust-item__label">Views on Viral Video</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__form-wrap reveal">
+                <iframe
+                    src="https://api.leadconnectorhq.com/widget/form/kyH3bHe4LZc2CN0tNpkM"
+                    style="width:100%;height:516px;border:none;border-radius:12px;"
+                    id="inline-kyH3bHe4LZc2CN0tNpkM"
+                    data-layout="{'id':'INLINE'}"
+                    data-trigger-type="alwaysShow"
+                    data-trigger-value=""
+                    data-activation-type="alwaysActivated"
+                    data-activation-value=""
+                    data-deactivation-type="neverDeactivate"
+                    data-deactivation-value=""
+                    data-form-name="Stop Vaping Guide Opt In"
+                    data-height="516"
+                    data-layout-iframe-id="inline-kyH3bHe4LZc2CN0tNpkM"
+                    data-form-id="kyH3bHe4LZc2CN0tNpkM"
+                    title="Stop Vaping Guide Opt In">
+                </iframe>
+                <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TEAR: off-white → teal -->
+<div class="tear" style="background: var(--off-white);">
+    <svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="fill: var(--teal);">
+        <path d="M0,40 L0,20 Q36,8 72,18 Q108,28 144,16 Q180,4 216,14 Q252,24 288,12 Q324,0 360,10 Q396,20 432,8 Q468,0 504,12 Q540,24 576,14 Q612,4 648,16 Q684,28 720,18 Q756,8 792,20 Q828,32 864,22 Q900,12 936,24 Q972,36 1008,26 Q1044,16 1080,28 Q1116,40 1152,30 Q1188,20 1224,32 Q1260,40 1296,28 Q1332,16 1368,26 Q1404,36 1440,20 L1440,40 Z"/>
+    </svg>
+</div>
+
+<!-- ===== THE PROBLEM (teal) ===== -->
+<section class="problem section-spacer">
+    <div class="container">
+        <div class="reveal" style="text-align: center; margin-bottom: 56px;">
+            <span class="pill" style="background: rgba(255,255,255,0.1); color: var(--cyan);">The Crisis</span>
+            <h2 class="display display--mid" style="color: var(--white); margin-top: 16px;">What most people<br>don't know</h2>
+        </div>
+        <div class="problem__grid reveal">
+            <div class="stat-card">
+                <div class="stat-card__num">6.9M</div>
+                <div class="stat-card__label">Views on a single video about a 19-year-old's fentanyl death from vaping</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card__num">100&times;</div>
+                <div class="stat-card__label">The nicotine in one hookah session vs. a single cigarette</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card__num">60–95%</div>
+                <div class="stat-card__label">THC concentration in today's vape cartridges — up from 2–4% in the 1970s</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card__num">2 mg</div>
+                <div class="stat-card__label">A lethal dose of fentanyl — smaller than a few grains of salt</div>
+            </div>
+        </div>
+        <div class="quote-block reveal">
+            <p>"At 5:45 in the morning, I stood in front of his parents and told them their son was dead. He was 19 years old. He thought he was vaping. He had no idea what was in that cartridge."</p>
+            <cite>— Nurse Charles, on a case watched 6.9 million times</cite>
+        </div>
+    </div>
+</section>
+
+<!-- TEAR: teal → off-white -->
+<div class="tear" style="background: var(--teal);">
+    <svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="fill: var(--off-white);">
+        <path d="M0,40 L0,12 Q48,24 96,14 Q144,4 192,16 Q240,28 288,18 Q336,8 384,20 Q432,32 480,22 Q528,12 576,24 Q624,36 672,20 Q720,4 768,16 Q816,28 864,14 Q912,0 960,12 Q1008,24 1056,10 Q1104,0 1152,14 Q1200,28 1248,18 Q1296,8 1344,22 Q1392,36 1440,16 L1440,40 Z"/>
+    </svg>
+</div>
+
+<!-- ===== BIG DISPLAY TEXT (Quoti style) ===== -->
+<section class="big-text section-spacer">
+    <div class="container" style="text-align: center;">
+        <div class="reveal">
+            <h2 class="display display--section" style="color: var(--dark);">
+                education<br>saves <span style="color: var(--teal);">lives</span>
+            </h2>
+            <p>Nurse Charles packed 37 years of emergency medicine into one free guide. 10 chapters. Real ER stories. A step-by-step plan to quit.</p>
+            <div class="btn-wrap btn--teal">
+                <a href="/er-nurses-guide-to-quitting-vaping.html">Get the Free Guide</a>
+                <div class="btn-hover">Get the Free Guide</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== WHAT'S INSIDE ===== -->
+<section class="chapters section-spacer" style="background: var(--white);">
+    <div class="container">
+        <div class="reveal" style="text-align: center; margin-bottom: 56px;">
+            <span class="pill pill--teal">Inside the Guide</span>
+            <h2 class="display display--mid" style="margin-top: 16px;">10 chapters of<br>life-saving info</h2>
+        </div>
+        <div class="chapters__grid reveal">
+            <div class="ch-card"><div class="ch-num">1</div><div><h4>Why I Wrote This Guide</h4><p>The 5:45 AM moment that changed everything — and why 6.9 million people listened.</p></div></div>
+            <div class="ch-card"><div class="ch-num">2</div><div><h4>The Vaping Crisis by the Numbers</h4><p>CDC stats, the THC potency explosion, fentanyl contamination, and the middle school epidemic.</p></div></div>
+            <div class="ch-card"><div class="ch-num">3</div><div><h4>What Vaping Does to Your Body</h4><p>Lungs, heart, brain — system by system. Including pre-surgery risks nobody talks about.</p></div></div>
+            <div class="ch-card"><div class="ch-num">4</div><div><h4>Real Stories from the ER</h4><p>6 adapted cases: from a fatal fentanyl hit to a 13-year-old in psychosis.</p></div></div>
+            <div class="ch-card"><div class="ch-num">5</div><div><h4>The THC Connection</h4><p>Why today's marijuana is nothing like what existed a generation ago.</p></div></div>
+            <div class="ch-card"><div class="ch-num">6</div><div><h4>A Chapter for Parents</h4><p>Signs your child is vaping, how to have the conversation, and when to go to the ER.</p></div></div>
+            <div class="ch-card"><div class="ch-num">7</div><div><h4>A Chapter for Young Adults</h4><p>No lectures — just the myths that will get you hurt, debunked.</p></div></div>
+            <div class="ch-card"><div class="ch-num">8</div><div><h4>How to Quit</h4><p>8 practical steps from decision to recovery — including surviving the first 72 hours.</p></div></div>
+            <div class="ch-card"><div class="ch-num">9</div><div><h4>Life After Vaping</h4><p>Recovery timeline, mental clarity, and the financial freedom nobody warns you about.</p></div></div>
+            <div class="ch-card"><div class="ch-num">10</div><div><h4>Resources</h4><p>Crisis lines, quit apps, treatment locators, and an ER red flags checklist.</p></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- TEAR: white → cream -->
+<div class="tear" style="background: var(--white);">
+    <svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="fill: var(--cream);">
+        <path d="M0,40 L0,20 Q60,6 120,18 Q180,30 240,16 Q300,2 360,14 Q420,26 480,12 Q540,0 600,14 Q660,28 720,16 Q780,4 840,18 Q900,32 960,20 Q1020,8 1080,22 Q1140,36 1200,24 Q1260,12 1320,26 Q1380,40 1440,24 L1440,40 Z"/>
+    </svg>
+</div>
+
+<!-- ===== ABOUT NURSE CHARLES ===== -->
+<section class="about section-spacer">
+    <div class="container">
+        <div class="about__grid">
+            <div class="about__images reveal">
+                <div class="about__img-main">
+                    <img src="Charles Headshot.png" alt="Nurse Charles">
+                </div>
+                <div class="about__img-cert">
+                    <img src="https://cdn.prod.website-files.com/67c0ca361b44fd783e89fbb8/67c0d8c283843df7911a4c55_Blue%20and%20Gold%20Simple%20Certificate.png" alt="Certification">
+                </div>
+                <div class="about__img-logo">
+                    <img src="https://cdn.prod.website-files.com/67c0ca361b44fd783e89fbb8/67c0cb31303d312489ee7da5_IAMNURSE%20CLEAR.png" alt="IAMNURSE Logo">
+                </div>
+            </div>
+            <div class="reveal">
+                <span class="pill pill--teal">Your Guide</span>
+                <h2 class="display display--mid" style="margin-top: 16px;">Meet Nurse<br>Charles</h2>
+                <p style="color: var(--gray-600); margin-top: 20px;">Charles T. Folsom Jr., RN, has spent over <strong>37 years</strong> in emergency medicine — working trauma centers, critical care units, and emergency departments across the country.</p>
+                <p style="color: var(--gray-600);">Two years ago, he started sharing what he sees in the ER on TikTok. <strong>100,000+ followers</strong>, videos watched over <strong>10 million times</strong>, and hundreds of messages from parents and teens all saying — <em>"Nobody ever explained this to me."</em></p>
+                <div class="cred-list">
+                    <span class="cred">37+ Years ER</span>
+                    <span class="cred">Registered Nurse</span>
+                    <span class="cred">Healthcare Executive</span>
+                    <span class="cred">Doctoral Candidate</span>
+                    <span class="cred">100K+ TikTok</span>
+                    <span class="cred">IAMNURSE Founder</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TEAR: cream → dark -->
+<div class="tear" style="background: var(--cream);">
+    <svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="fill: var(--dark);">
+        <path d="M0,40 L0,16 Q72,28 144,14 Q216,0 288,12 Q360,24 432,10 Q504,0 576,16 Q648,32 720,20 Q792,8 864,22 Q936,36 1008,24 Q1080,12 1152,26 Q1224,40 1296,28 Q1368,16 1440,24 L1440,40 Z"/>
+    </svg>
+</div>
+
+<!-- ===== ER STORIES (dark, horizontal scroll) ===== -->
+<section class="stories section-spacer">
+    <div class="container">
+        <div class="reveal" style="text-align: center; margin-bottom: 48px;">
+            <span class="pill pill--danger">From the ER</span>
+            <h2 class="display display--mid" style="color: var(--white); margin-top: 16px;">These are<br>real cases</h2>
+            <p style="color: rgba(255,255,255,0.6); max-width: 560px; margin: 16px auto 0; font-size: 16px;">Every story is adapted from a real patient. Identifying details changed. Outcomes unchanged.</p>
+        </div>
+        <div class="stories__scroll reveal">
+            <div class="story-card">
+                <div class="story-card__age">19</div>
+                <div class="story-card__label">Years Old</div>
+                <h4>One Hit. Fentanyl in the Cartridge.</h4>
+                <p>Vaped with friends. Bad cartridge. Pinpoint pupils. No breathing. EMS gave Narcan — didn't work. Parents notified at 5:45 AM.</p>
+                <span class="tag tag--fatal">Fatal</span>
+            </div>
+            <div class="story-card">
+                <div class="story-card__age">17</div>
+                <div class="story-card__label">Years Old</div>
+                <h4>One Hookah Session. Intubated.</h4>
+                <p>100x the nicotine of a cigarette in one session. Lost consciousness. Breathing tube placed. A machine kept him alive.</p>
+                <span class="tag tag--critical">Critical</span>
+            </div>
+            <div class="story-card">
+                <div class="story-card__age">13</div>
+                <div class="story-card__label">Years Old</div>
+                <h4>Full Psychosis from THC.</h4>
+                <p>Hallucinations. Paranoia. Disorganized thinking. One year of high-concentration THC vaping. No prior psychiatric history.</p>
+                <span class="tag tag--psychosis">Psychosis</span>
+            </div>
+            <div class="story-card">
+                <div class="story-card__age">16</div>
+                <div class="story-card__label">Years Old</div>
+                <h4>His Mother Was Afraid of Him.</h4>
+                <p>Good kid. Good grades. Started vaping THC. Within months — isolation, paranoia, aggression. Personality unrecognizable.</p>
+                <span class="tag tag--psychosis">Behavioral Crisis</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TEAR: dark → white -->
+<div class="tear" style="background: var(--dark);">
+    <svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="fill: var(--white);">
+        <path d="M0,40 L0,24 Q48,12 96,22 Q144,32 192,18 Q240,4 288,16 Q336,28 384,14 Q432,0 480,12 Q528,24 576,10 Q624,0 672,14 Q720,28 768,18 Q816,8 864,22 Q912,36 960,26 Q1008,16 1056,28 Q1104,40 1152,30 Q1200,20 1248,32 Q1296,40 1344,26 Q1392,12 1440,20 L1440,40 Z"/>
+    </svg>
+</div>
+
+<!-- ===== FAQ (Quoti layout: image sidebar + accordion) ===== -->
+<section class="faq section-spacer">
+    <div class="container">
+        <div class="faq__grid">
+            <div class="faq__cta reveal">
+                <div class="faq__cta-img">
+                    <img src="https://cdn.prod.website-files.com/67c0ca361b44fd783e89fbb8/67c0e9131a5ef3e3d075d698_EN%20HANDS%20HEADER%20%2814%29-poster-00001.jpg" alt="Nurse Charles in the ER">
+                </div>
+                <div class="faq__cta-body">
+                    <p>Have questions about vaping, quitting, or what's in this guide? The answers are below — or download the full guide for the complete picture.</p>
+                    <div class="btn-wrap btn--teal">
+                        <a href="/er-nurses-guide-to-quitting-vaping.html">Get the Free Guide</a>
+                        <div class="btn-hover">Get the Free Guide</div>
+                    </div>
+                </div>
+            </div>
+            <div class="faq__list reveal">
+                <h2 class="display display--mid" style="margin-bottom: 32px;">Frequently<br>asked questions</h2>
+                <details class="faq-item">
+                    <summary>Who is this guide for?</summary>
+                    <div class="faq-answer">Parents, teenagers, young adults, educators, and anyone who wants to understand what vaping actually does — and how to quit. Written in plain language by an ER nurse, not a textbook.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Is this guide really free?</summary>
+                    <div class="faq-answer">Yes. 100% free. Nurse Charles created this guide because the information needs to get out. Enter your email and the full guide will be delivered to your inbox immediately.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Is vaping really that dangerous?</summary>
+                    <div class="faq-answer">It's not water vapor. Vape aerosol contains propylene glycol, vegetable glycerin, heavy metals (nickel, lead, chromium), and flavoring chemicals linked to lung disease. When heated, some produce formaldehyde — a known carcinogen.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>My kid says they're only vaping nicotine. Should I worry?</summary>
+                    <div class="faq-answer">Yes. Nicotine is one of the most addictive substances on earth and can establish addiction in adolescents within days. It disrupts brain development in anyone under 25. And many kids don't actually know what's in their cartridges.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>What's the connection between vaping and fentanyl?</summary>
+                    <div class="faq-answer">Fentanyl — 50-100x more potent than morphine — is being found in black-market vape cartridges. A lethal dose is about 2 milligrams, smaller than a few grains of salt. You cannot see, smell, or taste it.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>How is today's THC different from what I used?</summary>
+                    <div class="faq-answer">In the 1970s, marijuana averaged 2-4% THC. Today's vape concentrates contain 60-95% THC — 15-25x more potent. It crosses the blood-brain barrier in seconds. This is not the same substance.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Does the guide include a quit plan?</summary>
+                    <div class="faq-answer">Yes. Chapter 8 is a complete 8-step quit plan: making the decision, identifying triggers, replacement behaviors, NRT, surviving the first 72 hours, building the first 30 days, support systems, and handling relapse.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Can I share this guide?</summary>
+                    <div class="faq-answer">Please do. Share it with parents, teachers, coaches, counselors, and anyone working with young people. Send them to this page to get their own copy.</div>
+                </details>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TEAR: white → teal -->
+<div class="tear" style="background: var(--white);">
+    <svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="fill: var(--teal);">
+        <path d="M0,40 L0,18 Q60,30 120,16 Q180,2 240,14 Q300,26 360,12 Q420,0 480,16 Q540,32 600,22 Q660,12 720,26 Q780,40 840,28 Q900,16 960,30 Q1020,40 1080,26 Q1140,12 1200,24 Q1260,36 1320,20 Q1380,4 1440,16 L1440,40 Z"/>
+    </svg>
+</div>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final-cta section-spacer" id="final-cta">
+    <div class="container reveal">
+        <span class="pill" style="background: rgba(255,255,255,0.12); color: var(--white); margin-bottom: 24px;">Free Instant Download</span>
+        <h2 class="display display--section">Your child's next<br>vape hit could be<br>their <span style="color: var(--cyan);">last</span></h2>
+        <p>Get the free guide that 10 million people wish existed sooner. Written by an ER nurse who's seen what happens when we don't talk about this.</p>
+    </div>
+</section>
+
+<!-- TEAR: teal → dark -->
+<div class="tear" style="background: var(--teal);">
+    <svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="fill: var(--dark);">
+        <path d="M0,40 L0,20 Q72,8 144,18 Q216,28 288,14 Q360,0 432,12 Q504,24 576,10 Q648,0 720,16 Q792,32 864,22 Q936,12 1008,26 Q1080,40 1152,28 Q1224,16 1296,30 Q1368,40 1440,24 L1440,40 Z"/>
+    </svg>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__grid">
+            <div class="footer__brand">
+                <img src="https://cdn.prod.website-files.com/67c0ca361b44fd783e89fbb8/67c0cb31303d312489ee7da5_IAMNURSE%20CLEAR.png" alt="IAMNURSE Logo" class="footer__logo">
+                <p>IAMNURSE LLC was founded by Nurse Charles to continue the education that started in the emergency room. Health coaching, wellness programs, and community health education.</p>
+            </div>
+            <div class="footer__col">
+                <h4>Contact</h4>
+                <a href="mailto:hello@iamnurse.org">hello@iamnurse.org</a>
+                <a href="tel:+18667300492">(866) 730-0492</a>
+                <a>3355 Lenox Rd NE, Suite 750</a>
+                <a>Atlanta, GA 30326</a>
+            </div>
+            <div class="footer__col">
+                <h4>Connect</h4>
+                <a href="https://www.tiktok.com/@1nursecharles" target="_blank" rel="noopener">TikTok — @1nursecharles</a>
+                <a href="https://iamnurse.org" target="_blank" rel="noopener">iamnurse.org</a>
+            </div>
+            <div class="footer__col">
+                <h4>Emergency</h4>
+                <a>911 — Medical Emergency</a>
+                <a>988 — Suicide & Crisis Lifeline</a>
+                <a>1-800-662-4357 — SAMHSA</a>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <span>&copy; 2026 IAMNURSE LLC. All rights reserved.</span>
+            <span>Charles T. Folsom Jr., RN — Founder</span>
+        </div>
+        <div class="footer__disclaimer">
+            This guide is for general educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions regarding a medical condition. If you or someone you know is in crisis, call 911 immediately.
+        </div>
+        <div class="footer__big-logo">IAMNURSE</div>
+    </div>
+</footer>
+
+<!-- ===== SCROLL REVEAL ===== -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const els = document.querySelectorAll('.reveal');
+    if (els.length) {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+        els.forEach(el => io.observe(el));
+    }
+
+});
+</script>
+
+</body>
+</html>
