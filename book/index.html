@@ -74,6 +74,27 @@
     .hero {
       text-align: left;
     }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      align-items: flex-start;
+      margin-top: 32px;
+    }
+    .hero-form {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: clamp(24px, 3vw, 32px);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    }
+    .hero-form .section-label {
+      color: var(--accent);
+    }
+    .hero-contact-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 18px;
+    }
     .eyebrow {
       font-size: 12px;
       letter-spacing: 0.2em;
@@ -302,6 +323,12 @@
       border-top: 1px solid rgba(255,255,255,0.08);
       background: rgba(3,7,18,0.9);
     }
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 700px) {
       nav {
         flex-direction: column;
@@ -329,29 +356,114 @@
     </header>
     <main>
       <section class="section hero">
-        <p class="eyebrow">Speaking &amp; Events</p>
-        <h1>Book Nurse Charles</h1>
-        <p>From healthcare summits and university stages to community town halls — Charles brings ER credibility, storytelling, and a bold voice on vaping, health equity, and youth mental health.</p>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="mailto:partnerships@nursecharlesmedia.com">Inquire via Email</a>
-          <a class="btn btn-outline" href="tel:8667300492">Call the Team</a>
-        </div>
-        <div class="topics">
-          <div class="topic-card">
-            <h3>Vaping &amp; Youth Health</h3>
-            <p>Real ER data, patient stories, and a no-sugar-coating push to keep teens out of the hospital.</p>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Speaking &amp; Events</p>
+            <h1>Book Nurse Charles</h1>
+            <p>From healthcare summits and university stages to community town halls — Charles brings ER credibility, storytelling, and a bold voice on vaping, health equity, and youth mental health.</p>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="mailto:partnerships@nursecharlesmedia.com">Inquire via Email</a>
+              <a class="btn btn-outline" href="tel:8667300492">Call the Team</a>
+            </div>
+            <div class="topics">
+              <div class="topic-card">
+                <h3>Vaping &amp; Youth Health</h3>
+                <p>Real ER data, patient stories, and a no-sugar-coating push to keep teens out of the hospital.</p>
+              </div>
+              <div class="topic-card">
+                <h3>Black Health Equity</h3>
+                <p>Systemic gaps, actionable calls to action, and where healthcare can do better today.</p>
+              </div>
+              <div class="topic-card">
+                <h3>ADHD &amp; Stress</h3>
+                <p>Practical stress hacks, community-based resources, and how to advocate for patients who feel stuck.</p>
+              </div>
+              <div class="topic-card">
+                <h3>ER Navigation</h3>
+                <p>What hospitals don’t tell patients, how to advocate, and how to avoid escalation before you even arrive.</p>
+              </div>
+            </div>
           </div>
-          <div class="topic-card">
-            <h3>Black Health Equity</h3>
-            <p>Systemic gaps, actionable calls to action, and where healthcare can do better today.</p>
-          </div>
-          <div class="topic-card">
-            <h3>ADHD &amp; Stress</h3>
-            <p>Practical stress hacks, community-based resources, and how to advocate for patients who feel stuck.</p>
-          </div>
-          <div class="topic-card">
-            <h3>ER Navigation</h3>
-            <p>What hospitals don’t tell patients, how to advocate, and how to avoid escalation before you even arrive.</p>
+          <div class="hero-form">
+            <span class="section-label">Contact</span>
+            <div class="divider"></div>
+            <h2 class="section-title">Let's Book Charles</h2>
+            <p class="section-desc">Use this form to request speaking dates, share event briefs, or ask about tailored programs. It sends to the same webhook that the homepage uses so nothing gets missed.</p>
+            <div class="contact-grid hero-contact-grid">
+              <div>
+                <p style="font-size:16px;color:rgba(255,255,255,0.6);line-height:1.8;margin-bottom:40px;">Whether you need a keynote, panel, workshop, or community talk — the team is standing by to scope the right delivery.</p>
+                <div class="contact-info-item">
+                  <div class="contact-info-icon">📧</div>
+                  <div>
+                    <div class="contact-info-label">Partnerships &amp; Brand Deals</div>
+                    <div class="contact-info-val">partnerships@nursecharlesmedia.com</div>
+                  </div>
+                </div>
+                <div class="contact-info-item">
+                  <div class="contact-info-icon">🌐</div>
+                  <div>
+                    <div class="contact-info-label">Website</div>
+                    <div class="contact-info-val">nursecharlesmedia.com</div>
+                  </div>
+                </div>
+                <div class="contact-info-item">
+                  <div class="contact-info-icon">📍</div>
+                  <div>
+                    <div class="contact-info-label">Location</div>
+                    <div class="contact-info-val">Atlanta, Georgia<br><span style="font-size:13px;color:rgba(255,255,255,0.6);font-weight:400;">3355 Lenox Rd NE, Suite 750</span></div>
+                  </div>
+                </div>
+                <div class="contact-info-item">
+                  <div class="contact-info-icon">📞</div>
+                  <div>
+                    <div class="contact-info-label">Phone</div>
+                    <div class="contact-info-val">(866) 730-0492</div>
+                  </div>
+                </div>
+              </div>
+              <form class="contact-form" id="contactForm" novalidate>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">First Name</label>
+                    <input type="text" name="firstName" class="form-input" placeholder="Jane" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Last Name</label>
+                    <input type="text" name="lastName" class="form-input" placeholder="Smith" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Email</label>
+                  <input type="email" name="email" class="form-input" placeholder="jane@company.com" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Company / Organization</label>
+                  <input type="text" name="company" class="form-input" placeholder="Health Co." required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Phone Number <span style="font-weight:400;color:rgba(255,255,255,0.6);font-size:12px;">(optional)</span></label>
+                  <input type="tel" name="phone" class="form-input" placeholder="+1 (555) 000-0000">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Inquiry Type</label>
+                  <select name="inquiryType" class="form-select">
+                    <option value="">Select a category</option>
+                    <option>Brand Partnership / Sponsorship</option>
+                    <option>Speaking Engagement</option>
+                    <option>Nonprofit / Health Equity Partnership</option>
+                    <option>Media / Press Inquiry</option>
+                    <option>Content Collaboration</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Message</label>
+                  <textarea name="message" class="form-textarea" placeholder="Tell me a bit about your project and what you have in mind..."></textarea>
+                </div>
+                <button type="submit" class="form-submit" id="formSubmitBtn">Send Inquiry →</button>
+                <div id="formMsg" style="display:none;margin-top:16px;padding:14px 18px;border-radius:10px;font-size:14px;font-weight:600;"></div>
+              </form>
+            </div>
           </div>
         </div>
       </section>
@@ -366,89 +478,6 @@
             <h3>Availability &amp; Logistics</h3>
             <p>Domestic travel, multi-city tours, and select international work considered. Production-ready, respectful of AV teams, and easy to book.</p>
             <p>We confirm within 24 hours whenever possible. Send a one-sheet or event brief to <strong>partnerships@nursecharlesmedia.com</strong>.</p>
-          </div>
-        </div>
-      </section>
-      <section class="section" id="contact">
-        <div class="container">
-          <span class="section-label">Contact</span>
-          <div class="divider"></div>
-          <h2 class="section-title">Let's Book Charles</h2>
-          <p class="section-desc">Use this form to request speaking dates, share event briefs, or ask about tailored programs. It sends to the same webhook that the homepage uses so nothing gets missed.</p>
-          <div class="contact-grid">
-            <div>
-              <p style="font-size:16px;color:rgba(255,255,255,0.6);line-height:1.8;margin-bottom:40px;">Whether you need a keynote, panel, workshop, or community talk — the team is standing by to scope the right delivery.</p>
-              <div class="contact-info-item">
-                <div class="contact-info-icon">📧</div>
-                <div>
-                  <div class="contact-info-label">Partnerships &amp; Brand Deals</div>
-                  <div class="contact-info-val">partnerships@nursecharlesmedia.com</div>
-                </div>
-              </div>
-              <div class="contact-info-item">
-                <div class="contact-info-icon">🌐</div>
-                <div>
-                  <div class="contact-info-label">Website</div>
-                  <div class="contact-info-val">nursecharlesmedia.com</div>
-                </div>
-              </div>
-              <div class="contact-info-item">
-                <div class="contact-info-icon">📍</div>
-                <div>
-                  <div class="contact-info-label">Location</div>
-                  <div class="contact-info-val">Atlanta, Georgia<br><span style="font-size:13px;color:rgba(255,255,255,0.6);font-weight:400;">3355 Lenox Rd NE, Suite 750</span></div>
-                </div>
-              </div>
-              <div class="contact-info-item">
-                <div class="contact-info-icon">📞</div>
-                <div>
-                  <div class="contact-info-label">Phone</div>
-                  <div class="contact-info-val">(866) 730-0492</div>
-                </div>
-              </div>
-            </div>
-            <form class="contact-form" id="contactForm" novalidate>
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="form-label">First Name</label>
-                  <input type="text" name="firstName" class="form-input" placeholder="Jane" required>
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Last Name</label>
-                  <input type="text" name="lastName" class="form-input" placeholder="Smith" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Email</label>
-                <input type="email" name="email" class="form-input" placeholder="jane@company.com" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Company / Organization</label>
-                <input type="text" name="company" class="form-input" placeholder="Health Co." required>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Phone Number <span style="font-weight:400;color:rgba(255,255,255,0.6);font-size:12px;">(optional)</span></label>
-                <input type="tel" name="phone" class="form-input" placeholder="+1 (555) 000-0000">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Inquiry Type</label>
-                <select name="inquiryType" class="form-select">
-                  <option value="">Select a category</option>
-                  <option>Brand Partnership / Sponsorship</option>
-                  <option>Speaking Engagement</option>
-                  <option>Nonprofit / Health Equity Partnership</option>
-                  <option>Media / Press Inquiry</option>
-                  <option>Content Collaboration</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Message</label>
-                <textarea name="message" class="form-textarea" placeholder="Tell me a bit about your project and what you have in mind..."></textarea>
-              </div>
-              <button type="submit" class="form-submit" id="formSubmitBtn">Send Inquiry →</button>
-              <div id="formMsg" style="display:none;margin-top:16px;padding:14px 18px;border-radius:10px;font-size:14px;font-weight:600;"></div>
-            </form>
           </div>
         </div>
       </section>
