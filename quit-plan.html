@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quit Vaping in 30 Days | Nurse Charles</title>
+    <meta name="description" content="A nurse's step-by-step protocol to quit vaping in 30 days. No willpower required. From Nurse Charles, RN.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0A0A0A;
+            --bg-card: #111111;
+            --bg-card-hover: #1A1A1A;
+            --primary: #00C853;
+            --primary-dim: rgba(0, 200, 83, 0.15);
+            --accent: #FF1744;
+            --text: #FFFFFF;
+            --text-secondary: #A0A0A0;
+            --text-dim: #666666;
+            --border: #222222;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Fade-in animation */
+        .fade-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ==================== HERO ==================== */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--primary);
+            background: var(--primary-dim);
+            padding: 8px 20px;
+            border-radius: 100px;
+            margin-bottom: 32px;
+            border: 1px solid rgba(0, 200, 83, 0.25);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 8vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero-sub {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            color: var(--text-secondary);
+            max-width: 520px;
+            margin: 0 auto 36px;
+            line-height: 1.7;
+        }
+
+        .price-block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .price-current {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .price-original {
+            font-size: 1.4rem;
+            color: var(--text-dim);
+            text-decoration: line-through;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #000;
+            background: var(--primary);
+            padding: 18px 48px;
+            border-radius: 12px;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 0 30px rgba(0, 200, 83, 0.25);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 50px rgba(0, 200, 83, 0.35);
+        }
+
+        .cta-btn:active {
+            transform: translateY(0);
+        }
+
+        /* ==================== PROBLEM ==================== */
+        .problem {
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .problem h2 {
+            font-size: clamp(1.6rem, 5vw, 2.2rem);
+            margin-bottom: 28px;
+            line-height: 1.2;
+        }
+
+        .problem p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .problem .cycle {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 28px 0;
+            font-size: 1.05rem;
+            line-height: 2;
+            color: var(--text-secondary);
+        }
+
+        .problem .cycle span {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .problem .punchline {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-top: 8px;
+        }
+
+        /* ==================== WHAT'S INSIDE ==================== */
+        .whats-inside {
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .whats-inside h2 {
+            font-size: clamp(1.6rem, 5vw, 2.2rem);
+            margin-bottom: 12px;
+        }
+
+        .whats-inside .section-sub {
+            color: var(--text-secondary);
+            margin-bottom: 36px;
+            font-size: 1.05rem;
+        }
+
+        .phase-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .phase-card:hover {
+            border-color: var(--primary);
+        }
+
+        .phase-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .phase-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .phase-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .bonus-list {
+            margin-top: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .bonus-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .bonus-item .check {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            min-width: 28px;
+            background: var(--primary-dim);
+            border-radius: 8px;
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        /* ==================== SOCIAL PROOF ==================== */
+        .social-proof {
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .social-proof h2 {
+            font-size: clamp(1.6rem, 5vw, 2.2rem);
+            margin-bottom: 8px;
+        }
+
+        .trust-stats {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 36px;
+            flex-wrap: wrap;
+        }
+
+        .trust-stat {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .trust-stat .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        .testimonial {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+
+        .testimonial .quote {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+
+        .testimonial .attribution {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            font-weight: 600;
+        }
+
+        .testimonial .placeholder-note {
+            font-size: 0.75rem;
+            color: var(--accent);
+            opacity: 0.6;
+            margin-top: 4px;
+        }
+
+        /* ==================== FAQ ==================== */
+        .faq {
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .faq h2 {
+            font-size: clamp(1.6rem, 5vw, 2.2rem);
+            margin-bottom: 32px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+            cursor: pointer;
+        }
+
+        .faq-item:first-of-type {
+            border-top: 1px solid var(--border);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .faq-question h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .faq-toggle {
+            font-size: 1.4rem;
+            color: var(--text-dim);
+            transition: transform 0.3s ease;
+            min-width: 24px;
+            text-align: center;
+            user-select: none;
+        }
+
+        .faq-item.open .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+            padding-top: 14px;
+        }
+
+        .faq-answer p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .faq-answer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .faq-answer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ==================== FINAL CTA ==================== */
+        .final-cta {
+            padding: 80px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .final-cta .healing-line {
+            font-size: clamp(1rem, 3vw, 1.15rem);
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .final-cta h2 {
+            font-size: clamp(1.6rem, 5vw, 2.2rem);
+            margin-bottom: 32px;
+            line-height: 1.2;
+        }
+
+        .final-cta .price-block {
+            margin-bottom: 28px;
+        }
+
+        .final-cta .guarantee {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: var(--text-dim);
+        }
+
+        .final-cta .sub-details {
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        footer .brand {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-dim);
+            margin-bottom: 12px;
+        }
+
+        footer .brand a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+
+        footer .brand a:hover {
+            color: var(--text-secondary);
+        }
+
+        footer .disclaimer {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
+            opacity: 0.7;
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 480px) {
+            .hero {
+                padding: 60px 0 48px;
+            }
+
+            .cta-btn {
+                width: 100%;
+                text-align: center;
+                padding: 18px 24px;
+            }
+
+            .phase-card {
+                padding: 22px;
+            }
+
+            .trust-stats {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">FROM NURSE CHARLES, RN</div>
+            <h1>Quit Vaping in 30 Days</h1>
+            <p class="hero-sub">The exact protocol I use with my patients. Step-by-step, day-by-day, no willpower required.</p>
+            <div class="price-block">
+                <span class="price-current">$19</span>
+                <span class="price-original">$49</span>
+            </div>
+            <!-- CONFIGURABLE: Replace href with your GHL checkout URL -->
+            <a href="#CHECKOUT_URL" class="cta-btn">GET THE PLAN</a>
+        </div>
+    </section>
+
+    <!-- ==================== THE PROBLEM ==================== -->
+    <section class="problem fade-section">
+        <div class="container">
+            <h2>You've tried to quit before.</h2>
+            <p>Maybe you made it a day. Maybe a week. Then stress hit, someone offered you a hit, or you just got bored. And you were right back in it.</p>
+            <div class="cycle">
+                <span>Quit for a day.</span> Feel proud.<br>
+                <span>Stress hits.</span> Tell yourself "just one."<br>
+                <span>Buy another pod.</span> Feel guilty.<br>
+                <span>Repeat.</span>
+            </div>
+            <p>You're not weak. You're fighting one of the most addictive substances on the planet with zero strategy. That's like showing up to a final with no notes.</p>
+            <p class="punchline">It's not a willpower problem. It's a strategy problem.</p>
+        </div>
+    </section>
+
+    <!-- ==================== WHAT'S INSIDE ==================== -->
+    <section class="whats-inside fade-section">
+        <div class="container">
+            <h2>What's Inside the Plan</h2>
+            <p class="section-sub">30 days. Three phases. Built from clinical experience with real patients.</p>
+
+            <div class="phase-card">
+                <div class="phase-label">Day 1-3</div>
+                <h3>The Detox Phase</h3>
+                <p>What happens to your body hour by hour when you stop. What to expect, what's normal, what's not. Exact techniques to survive the first 72 hours of cravings without white-knuckling it.</p>
+            </div>
+
+            <div class="phase-card">
+                <div class="phase-label">Day 4-14</div>
+                <h3>The Rewiring Phase</h3>
+                <p>Your brain built habit loops around nicotine. This phase breaks them. Replacement strategies that actually work, how to fix your sleep, and what to do when your hands don't know what to do with themselves.</p>
+            </div>
+
+            <div class="phase-card">
+                <div class="phase-label">Day 15-30</div>
+                <h3>The Lock-In Phase</h3>
+                <p>This is where most people relapse. Not because of cravings, but because of identity. You'll build the mindset of a non-vaper, learn scripts for social pressure, and set up relapse prevention so one bad night doesn't undo everything.</p>
+            </div>
+
+            <div class="bonus-list">
+                <div class="bonus-item">
+                    <div class="check">+</div>
+                    <span>Emergency craving protocol (what to do in the next 90 seconds)</span>
+                </div>
+                <div class="bonus-item">
+                    <div class="check">+</div>
+                    <span>Daily progress tracker to see how far you've come</span>
+                </div>
+                <div class="bonus-item">
+                    <div class="check">+</div>
+                    <span>Body healing timeline: what's improving and when</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SOCIAL PROOF ==================== -->
+    <section class="social-proof fade-section">
+        <div class="container">
+            <h2>Why Nurse Charles?</h2>
+            <div class="trust-stats">
+                <div class="trust-stat"><div class="dot"></div> 200K+ followers trust NC for real health education</div>
+                <div class="trust-stat"><div class="dot"></div> 9.5M+ TikTok views this month</div>
+            </div>
+
+            <div class="testimonial">
+                <p class="quote">"Placeholder testimonial. Replace with a real testimonial from someone who quit using the guide."</p>
+                <p class="attribution">-- Name, Age</p>
+                <p class="placeholder-note">[REPLACE WITH REAL TESTIMONIAL]</p>
+            </div>
+
+            <div class="testimonial">
+                <p class="quote">"Placeholder testimonial. Replace with a real testimonial about the day-by-day format making it easy to follow."</p>
+                <p class="attribution">-- Name, Age</p>
+                <p class="placeholder-note">[REPLACE WITH REAL TESTIMONIAL]</p>
+            </div>
+
+            <div class="testimonial">
+                <p class="quote">"Placeholder testimonial. Replace with a real testimonial about the craving protocol being a game changer."</p>
+                <p class="attribution">-- Name, Age</p>
+                <p class="placeholder-note">[REPLACE WITH REAL TESTIMONIAL]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FAQ ==================== -->
+    <section class="faq fade-section">
+        <div class="container">
+            <h2>Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Is this medical advice?</h3>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>No. This is an educational guide written by a registered nurse based on clinical experience. It is not a substitute for professional medical treatment. Always consult your doctor before making changes to your health routine.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>What format is it?</h3>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>It's a PDF. You get instant download access after purchase. Works on your phone, tablet, laptop, anything.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>What if it doesn't work for me?</h3>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>Every person is different. But this protocol is built from clinical experience with real patients, not theory. If you follow the 30-day plan and don't feel a difference, email us.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>I'm not addicted, I just vape socially.</h3>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>Start with the <a href="#FUNNEL_PAGE_URL">free guide</a> first. If you still believe that after reading it, you probably don't need this. But most people are surprised by what they learn.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FINAL CTA ==================== -->
+    <section class="final-cta fade-section">
+        <div class="container">
+            <p class="healing-line">Your lungs start healing in 24 hours.</p>
+            <h2>In 30 days, you won't recognize how you feel.</h2>
+            <div class="price-block">
+                <span class="price-current">$19</span>
+                <span class="price-original">$49</span>
+            </div>
+            <!-- CONFIGURABLE: Replace href with your GHL checkout URL -->
+            <a href="#CHECKOUT_URL" class="cta-btn">START YOUR 30-DAY PLAN</a>
+            <p class="sub-details">One-time payment. Instant download. No subscription.</p>
+            <p class="guarantee">If you don't feel a difference in 30 days, email us.</p>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container">
+            <p class="brand">Nurse Charles Media | <a href="https://nursecharlesmedia.com">nursecharlesmedia.com</a></p>
+            <p class="disclaimer">This guide is for educational purposes only and does not constitute medical advice. Consult a healthcare provider for personalized treatment.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll-triggered fade-in
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-section').forEach(el => observer.observe(el));
+
+        // FAQ toggle
+        function toggleFaq(el) {
+            const item = el.closest('.faq-item');
+            item.classList.toggle('open');
+        }
+    </script>
+
+</body>
+</html>
