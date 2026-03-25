@@ -235,10 +235,13 @@ form.addEventListener('submit', async function(e) {
   submitBtn.textContent = 'SENDING...';
 
   try {
+    const formData = new URLSearchParams();
+    formData.append('first_name', firstName);
+    formData.append('email', email);
+    formData.append('phone', phone);
     await fetch(FORM_ENDPOINT, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ firstName, email, phone }),
+      body: formData,
       mode: 'no-cors'
     });
 
