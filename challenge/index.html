@@ -770,7 +770,8 @@ footer .site-link a:hover {
     btn.disabled = true;
     btn.textContent = 'Signing you up...';
 
-    fetch('https://services.leadconnectorhq.com/hooks/VMK8SyHTd8uCMgcJ7I2A/webhook-trigger/15afeac0-4084-40ce-9bb9-0e28300fa9dd', {
+    // Send to n8n (CORS-safe), n8n forwards to GHL
+    fetch('https://northos.app.n8n.cloud/webhook/nc-challenge-signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -780,12 +781,10 @@ footer .site-link a:hover {
       })
     })
     .then(function(res) {
-      if (!res.ok) throw new Error('Network response was not ok');
       document.getElementById('form-content').style.display = 'none';
       document.getElementById('success-message').style.display = 'block';
     })
     .catch(function() {
-      // Show success anyway for UX -- webhook might be CORS-blocked from static page
       document.getElementById('form-content').style.display = 'none';
       document.getElementById('success-message').style.display = 'block';
     });
