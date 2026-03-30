@@ -770,7 +770,7 @@ footer .site-link a:hover {
     btn.disabled = true;
     btn.textContent = 'Signing you up...';
 
-    fetch('WEBHOOK_URL_HERE', {
+    fetch('https://northos.app.n8n.cloud/webhook/nc-5day-challenge', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
